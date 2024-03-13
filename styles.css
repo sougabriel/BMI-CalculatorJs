@@ -1,3 +1,29 @@
-html {
+:root {
+    --dende: #dede;
+}
 
+header {
+    color: blueviolet;
+    text-align: center;
+}
+
+section {
+    width: 30%;
+    margin: 0 auto;
+}
+
+button {
+    width: 100%;
+}
+
+.form-floating {
+    margin: 10px 0px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100dvw;
+    opacity: 60%;
+    text-align: center;
 }
