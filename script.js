@@ -1,3 +1,1 @@
-html {
-
-}
+angular.module('app', [])

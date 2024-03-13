@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
     <meta charset="UTF-8">
@@ -37,17 +37,19 @@
         <section>
 
             <p>
-                Body mass index (BMI) is a measure of body fat based on height and weight. 
-                It is calculated by dividing a person's weight in kilograms by the square of their height in meters. 
+                Body mass index (BMI) is a measure of body fat based on height and weight.
+                It is calculated by dividing a person's weight in kilograms by the square of their height in meters.
                 The formula is BMI = kg/m<sup>2</sup>.
             </p>
 
             <p>
                 <strong>BMI categories are:</strong>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
                 </svg>
 
                 <li>Underweight: BMI less than 18.5</li>
@@ -57,17 +59,23 @@
             </p>
 
             <div class="form-floating">
-                <input type="number" class="form-control" id="floatingInput" placeholder="type your height">
-                <label for="floatingInput">Type your height</label>
+                <input type="number" min="20" max="500" class="form-control" id="floatingInput" placeholder="" ng-model="weight">
+                <label for="floatingInput">Type your weight in kg</label>
             </div>
 
             <div class="form-floating">
-                <input type="number" class="form-control" id="floatingInput" placeholder="type your weight">
-                <label for="floatingInput">Type your weight</label>
+                <input type="number" min="0.40" max="3" class="form-control" id="floatingInput" placeholder="" ng-model="height">
+                <label for="floatingInput">Type your height in meters</label>
             </div>
 
-            <button class="btn btn-primary rounded-pill px-3" type="button">View Result</button>
         </section>
+
+        <section id="result-container">
+            <h3>
+                {{ weight }} / {{ height }}<sup>2</sup> = {{ weight / ( height * height ) }}
+            </h3>
+        </section>
+
     </main>
 
     <footer>
