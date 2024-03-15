@@ -19,10 +19,92 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <style>
+        @font-face {
+            font-family: 'E1234';
+            src: url('./assets/fonts/E1234.ttf');
+        }
+        
+        @font-face {
+            font-family: 'Reality';
+            src: url('./assets/fonts/Reality.ttf');
+        }
+
+        html,
+        body {
+            height: 100dvh;
+        }
+
+        * {
+            position: relative;
+            margin: 0;
+        }
+
+        header {
+            color: blueviolet;
+            text-align: center;
+            font-family: 'Reality', sans-serif;
+        }
+
+        section {
+            width: 30%;
+            height: 60dvh;
+            margin: auto auto;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #e9e9e9;
+        }
+
+        img {
+            max-width: 24px;
+            max-height: 24px;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        .form-floating {
+            margin: 10px 0px;
+        }
+
+        input[type=number] {
+            font-family: 'E1234', sans-serif;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100dvw;
+            opacity: 60%;
+            text-align: center;
+            font-family: 'Reality', sans-serif;
+        }
+
+        @media (max-width: 1200px) {
+            section {
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 968px) {
+            section {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 726px) {
+            section {
+                width: 90%;
+            }
+        }
+    </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -59,23 +141,23 @@
             </p>
 
             <div class="form-floating">
-                <input type="number" min="20" max="500" class="form-control" id="floatingInput" placeholder="" ng-model="weight">
+                <input type="number" min="20" max="500" class="form-control" id="floatingInput" placeholder=""
+                    ng-model="weight">
                 <label for="floatingInput">Type your weight in kg</label>
             </div>
 
             <div class="form-floating">
-                <input type="number" min="0.40" max="3" class="form-control" id="floatingInput" placeholder="" ng-model="height">
+                <input type="number" min="0.40" max="3" class="form-control" id="floatingInput" placeholder=""
+                    ng-model="height">
                 <label for="floatingInput">Type your height in meters</label>
             </div>
 
-        </section>
+            <hr>
 
-        <section id="result-container">
             <h3>
                 {{ weight }} / {{ height }}<sup>2</sup> = {{ weight / ( height * height ) }}
             </h3>
         </section>
-
     </main>
 
     <footer>
@@ -84,6 +166,9 @@
         </p>
     </footer>
 
+    <script>
+        angular.module('app', [])
+    </script>
 </body>
 
 </html>
